@@ -1,0 +1,120 @@
+#+TITLE:         100 Days Of Machine Learning Code
+#+AUTHOR:        Sergio-Feliciano Mendoza-Barrera
+#+DRAWERS:       sfmb
+#+EMAIL:         s.f.m@ieee.org
+#+DATE:          05/07/2018
+#+DESCRIPTION:   Deep Learning Specialization series course
+#+KEYWORDS:      R, data science, emacs, ESS, org-mode, deep learning
+#+LANGUAGE:      en
+#+OPTIONS:       H:10 num:t toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t d:HIDDEN
+#+OPTIONS:       TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS:       LaTeX:dvipng
+#+INFOJS_OPT:    view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+STYLE: <link rel="stylesheet" type="text/css" href="dft.css"/>
+
+#+LaTeX_CLASS: IEEEtran
+#+LATEX_CLASS_OPTIONS: [letterpaper, 9pt, onecolumn, twoside, technote, final]
+#+LATEX_HEADER: \usepackage[USenglish]{babel}
+#+LATEX_HEADER: \hyphenation{do-cu-ment}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{makeidx}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[ttdefault=true]{AnonymousPro}
+#+LATEX_HEADER: \renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+#+LATEX_HEADER: \usepackage[libertine,bigdelims]{newtxmath}
+#+LATEX_HEADER: \usepackage[cal=boondoxo,bb=boondox,frak=boondox]{mathalfa}
+#+LATEX_HEADER: \useosf % change normal text to use proportional oldstyle figures
+
+#+LATEX_HEADER: \markboth{100 Days Of Machine Learning Code}%
+#+LATEX_HEADER: {Sergio-Feliciano Mendoza-Barrera}
+
+#+LATEX_HEADER: \newcommand{\degC}{$^\circ$C{}}
+
+#+STYLE: <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+
+#+ATTR_HTML: width="500px"
+
+# -*- mode: org; -*-
+#+OPTIONS:   toc:2
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+
+#+BEGIN_ABSTRACT
+According to the challenge we are going to explore a project and maybe
+the possibility to monetize a solution of an industry problem using
+ML.
+
+[[https://twitter.com/sirajraval/status/1014758160572141568][URL]]
+
+"Who’s ready to take the 100 days of ML code challenge? That means
+coding machine learning for at least an hour everyday for the next 100
+days. Pledge with the #100DaysOfMLCode hashtag, I’ll give the first
+few winners a shoutout!"
+#+END_ABSTRACT
+
+* 100DaysOfMLCodeSFMB
+
+After read this tweet can be a great way to master something, do not
+know what is, yet.
+
+* Day 1 [Thu Jul  5 20:58:13 CDT 2018]
+
+** Siraj Raval Tweet
+
+Who’s ready to take the 100 days of ML code challenge? That means
+coding machine learning for at least an hour everyday for the next 100
+days. Pledge with the #100DaysOfMLCode hashtag, I’ll give the first
+few winners a shoutout!
+
+[[https://twitter.com/sirajraval/status/1014758160572141568][Link to Tweet]].
+
+** Challenge
+
+Pick an industry that sounds exciting, find a problem they have, think
+about how AI could be applied to that problem, locate a relevant
+dataset, apply AI to the dataset, monetize the solution.
+
+** Following my own path using Julia, R and Python
+
+In that order, trying to go as far as I can using the first one
+syntax.
+
+** Install Julia
+
+#+BEGIN_SRC text
+   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: https://docs.julialang.org
+   _ _   _| |_  __ _   |  Type "?help" for help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.6.3 (2018-05-28 20:20 UTC)
+ _/ |\__'_|_|_|\__'_|  |  Official http://julialang.org/ release
+|__/                   |  x86_64-pc-linux-gnu
+#+END_SRC
+
+** Install python
+
+#+BEGIN_SRC text
+  Python version ::
+  sys.version_info(major=3, minor=6, micro=5, releaselevel='final', serial=0)
+  =================
+  OpenCV version ::
+  3.4.0
+  =================
+  Tensorflow version ::
+  1.4.1
+#+END_SRC
+
+** Install Emacs
+
+I am joking, Emacs is always installed ;-).

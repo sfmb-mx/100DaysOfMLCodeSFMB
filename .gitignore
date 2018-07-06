@@ -29,8 +29,9 @@ videos/*
 
 src/auto/
 src/auto/*
-src/_minted/
-src/_minted/*
+src/_minted*/
+src/_minted*/*
+*.tex
 
 # OS or Editor folders
 ._*

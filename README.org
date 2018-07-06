@@ -1,0 +1,21 @@
+* 100DaysOfMLCodeSFMB
+
+After read this tweet can be a great way to master something, do not
+know what is, yet.
+
+** Siraj Raval Tweet
+
+Who’s ready to take the 100 days of ML code challenge? That means
+coding machine learning for at least an hour everyday for the next 100
+days. Pledge with the #100DaysOfMLCode hashtag, I’ll give the first
+few winners a shoutout!
+
+[[https://twitter.com/sirajraval/status/1014758160572141568][Link to Tweet]].
+
+** Challenge
+
+Pick an industry that sounds exciting, find a problem they have, think
+about how AI could be applied to that problem, locate a relevant
+dataset, apply AI to the dataset, monetize the solution.
+
+EOF
