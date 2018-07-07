@@ -68,6 +68,9 @@ few winners a shoutout!"
 After read this tweet can be a great way to master something, do not
 know what is, yet.
 
+In day 2 I decided to explore the MIT course *9.520/6.860: Statistical
+Learning Theory and Applications* [[http://www.mit.edu/~9.520/fall17/][Fall 2017]].
+
 * Day 1 [Thu Jul  5 20:58:13 CDT 2018]
 
 ** Siraj Raval Tweet
@@ -118,3 +121,171 @@ syntax.
 ** Install Emacs
 
 I am joking, Emacs is always installed ;-).
+
+* Day 2 [Fri Jul  6 19:21:03 CDT 2018]
+
+9.520/6.860: Statistical Learning Theory and Applications, Fall 2017
+
+*Instructors*: [[http://cbcl.mit.edu/people/poggio/poggio-new.htm][Tomaso Poggio (TP)]], [[http://web.mit.edu/lrosasco/www/][Lorenzo Rosasco (LR)]], [[http://web.mit.edu/gevang/www/][Georgios
+Evangelopoulos (GE)]]
+
+** Course description
+
+The course covers foundations and recent advances of Machine Learning
+from the point of view of Statistical Learning and Regularization
+Theory.
+
+Understanding intelligence and how to replicate it in machines is
+arguably one of the greatest problems in science. Learning, its
+principles and computational implementations, is at the very core of
+intelligence. During the last decade, for the first time, we have been
+able to develop artificial intelligence systems that can solve complex
+tasks, until recently the exclusive domain of biological organisms,
+such as computer vision, speech recognition or natural language
+understanding: cameras recognize faces, smart phones understand voice
+commands, smart speakers/assistants answer questions and cars can see
+and avoid obstacles.
+
+The machine learning algorithms that are at the roots of these success
+stories are trained with labeled examples rather than programmed to
+solve a task. Among the approaches in modern machine learning, the
+course focuses on regularization techniques, that provide a
+theoretical foundation to high-dimensional supervised
+learning. Besides classic approaches such as Support Vector Machines,
+the course covers state of the art techniques using sparsity or data
+geometry (aka manifold learning), a variety of algorithms for
+supervised learning (batch and online), feature selection, structured
+prediction, and multitask learning and principles for designing or
+learning data representations. Concepts from optimization theory
+useful for machine learning are covered in some detail (first order
+methods, proximal/splitting techniques,...).
+
+The final part of the course will focus on deep learning networks. It
+will introduce an emerging theory formalizing three key areas for the
+rigorous characterization of deep learning: approximation theory --
+which functions can be represented efficiently?; optimization theory
+-- how easy is it to minimize the training error?; and generalization
+properties -- is classical learning theory sufficient for deep
+learning? It will also outline a theory of hierarchical architectures
+that aims to explain how to build machine that learn using cortex
+principles and similar to how children learn: from few labeled and
+many more unlabeled data.
+
+The goal of the course is to provide students with the theoretical
+knowledge and the basic intuitions needed to use and develop effective
+machine learning solutions to challenging problems.
+
+** Prerequisites
+
+We will make extensive use of basic notions of calculus, linear
+algebra and probability. The essentials are covered in class and in
+the math camp material. We will introduce a few concepts in
+functional/convex analysis and optimization. Note that this is an
+advanced graduate course and some exposure on introductory Machine
+Learning concepts or courses is expected. Students are also expected
+to have basic familiarity with MATLAB/Octave.
+
+** Grading
+
+Pset and project tentative dates: ([[https://docs.google.com/presentation/d/1xt7U25g0AmOrBFxprJyq78qD45g80bH9Y2TbUNokYTE/][slides]]).
+
+** Problem Sets
+
+Problem Set 1
+Problem Set 2
+Problem Set 3
+Problem Set 4
+
+Submission instructions: Follow the instructions included with the
+problem set. Use the [[http://www.mit.edu/~9.520/fall17/slides/9.520_pset_template.zip][latex template]] for the report (there is a maximum
+page limit). Submit your report online through stellar.mit by the due
+date/time and a printout in the first class after the due date.
+
+** Projects
+
+Reports are 1-page, extended abstracts using [[http://www.mit.edu/~9.520/fall17/slides/9.520_project_report_template.zip][NIPS style files]].
+
+*** Projects archive
+
+[[http://www.mit.edu/~9.520/wikiprojects.html][List of Wikipedia]] entries, created or edited as part of projects
+during previous course offerings.
+
+** Syllabus
+
+[[http://www.mit.edu/~9.520/fall17/#briefsyllabus][URL]].
+
+Follow the link for each class to find a detailed description,
+suggested readings, and class slides. Some of the later classes may be
+subject to reordering or rescheduling.
+
+| Class    | Date       | Title                                                        | Instructor(s) |
+|----------+------------+--------------------------------------------------------------+---------------|
+| Class 01 | Wed Sep 06 | [[http://www.mit.edu/~9.520/fall17/Classes/course_glance.html][The Course at a Glance]]                                       | TP            |
+| Class 02 | Mon Sep 11 | The Learning Problem and Regularization                      | LR            |
+| Class 03 | Wed Sep 13 | Reproducing Kernel Hilbert Spaces                            | LR            |
+| Class 04 | Mon Sep 18 | Positive Definite Functions, Feature Maps and Mercer Theorem | LR            |
+| Class 05 | Wed Sep 20 | Tikhonov Regularization and the Representer Theorem          | LR            |
+| Class 06 | Mon Sep 25 | Logistic Regression and Support Vector Machines              | LR            |
+| Class 07 | Wed Sep 27 | Regularized Least Squares                                    | LR            |
+| Class 08 | Mon Oct 02 | Iterative Regularization via Early Stopping                  | LR            |
+| Class 09 | Wed Oct 04 | Learning with Stochastic Gradients                           | LR            |
+| Class 10 | Wed Oct 11 | Large Scale Kernel Methods                                   | LR            |
+| Class 11 | Mon Oct 16 | Sparsity Based Regularization                                | LR            |
+| Class 12 | Wed Oct 18 | Convex Relaxation and Proximal Gradient                      | LR            |
+| Class 13 | Mon Oct 23 | Structured Sparsity Regularization                           | LR            |
+| Class 14 | Wed Oct 25 | Multiple Kernel Learning                                     | LR            |
+| Class 15 | Mon Oct 30 | Learning Theory                                              | LR            |
+| Class 16 | Wed Nov 01 | Generalization Error and Stability                           | LR            |
+| Class 17 | Mon Nov 06 | Online Learning II                                           | Sasha Rakhlin |
+| Class 18 | Wed Nov 08 | Online Learning II                                           | Sasha Rakhlin |
+| Class 19 | Mon Nov 13 | Data Representation by Design                                | GE            |
+| Class 20 | Wed Nov 15 | Learning Data Representation: Dictionary Learning            | GE            |
+| Class 21 | Mon Nov 20 | Learning Data Representation: Neural Networks                | GE            |
+| Class 22 | Wed Nov 22 | Deep Learning Theory: Approximation                          | TP            |
+| Class 23 | Mon Nov 27 | Deep Learning Theory: Optimization                           | TP            |
+| Class 24 | Wed Nov 29 | Deep Learning Theory: Generalization                         | TP            |
+| Class 25 | Mon Dec 04 | Learning Data Representation: Invariance and Selectivity     | TP            |
+| Class 26 | Wed Dec 06 | Deep Networks and Visual Cortex                              | TP            |
+| Class 27 | Mon Dec 11 | Poster presentations (2 sessions)                            |               |
+
+** Class 1. Course at a Glance
+
+*** Description
+
+We introduce and motivate the main theme of much of the course,
+setting the problem of supervised learning from examples as the
+ill-posed problem of approximating a multivariate function from sparse
+data. We present an overview of the theoretical part of the course and
+sketch the connection between classical Regularization Theory with its
+RKHS-based algorithms and Learning Theory. We briefly describe several
+different applications ranging from vision to computer graphics, to
+finance and neuroscience. The last third of the course will be on data
+representations for learning and deep learning. It will introduce
+recent theoretical developments towards a) understanding why deep
+learning works and b) a new phase in machine learning, beyond
+classical supervised learning: how to learn in an unsupervised way
+representations that significantly decrease the sample complexity of a
+supervised learning.
+
+*** Slides
+
+- Slides for this lecture: [[file:../docs/class01_2017.pdf][PDF]].
+
+**** Youtube video class 2015.
+
+[[yt:6AWZS4Ho2Z8]]
+
+[[https://youtu.be/6AWZS4Ho2Z8][Link here]]
+
+**** 2017 Course - [[https://cbmm.mit.edu][Center for Brains, Minds and Machines]] (CBMM)
+
+[[yt:Q5itLKscYTA]]
+
+[[https://youtu.be/Q5itLKscYTA][Link here]]
+
+*** Relevant Reading
+
+- Mnih et. al. (Deep Mind), [[http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html][Human-level control through deep
+  reinforcement learning]], Nature 518, pp. 529-533, 2015.
+- Nature Insights, [[http://www.nature.com/nature/supplements/insights/machine-intelligence/index.html][Machine Intelligence]] (with review article on Deep
+  Learning), Nature, Vol. 521 No. 7553, pp. 435-482, 2015.
