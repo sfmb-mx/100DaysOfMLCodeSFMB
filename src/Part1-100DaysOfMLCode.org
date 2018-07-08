@@ -289,3 +289,13 @@ supervised learning.
   reinforcement learning]], Nature 518, pp. 529-533, 2015.
 - Nature Insights, [[http://www.nature.com/nature/supplements/insights/machine-intelligence/index.html][Machine Intelligence]] (with review article on Deep
   Learning), Nature, Vol. 521 No. 7553, pp. 435-482, 2015.
+
+
+* Day 3 [Sat Jul  7 13:12:57 CDT 2018]
+
+1. Class 1 video [14.51]
+2. Slide [26]
+
+* Day 4 [Sun Jul  8 12:59:19 CDT 2018]
+
+1. Class 1 Done
