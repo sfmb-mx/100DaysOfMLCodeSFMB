@@ -221,7 +221,7 @@ subject to reordering or rescheduling.
 | Class    | Date       | Title                                                        | Instructor(s) |
 |----------+------------+--------------------------------------------------------------+---------------|
 | Class 01 | Wed Sep 06 | [[http://www.mit.edu/~9.520/fall17/Classes/course_glance.html][The Course at a Glance]]                                       | TP            |
-| Class 02 | Mon Sep 11 | The Learning Problem and Regularization                      | LR            |
+| Class 02 | Mon Sep 11 | [[http://www.mit.edu/~9.520/fall17/Classes/learning_problem.html][The Learning Problem and Regularization]]                      | LR            |
 | Class 03 | Wed Sep 13 | Reproducing Kernel Hilbert Spaces                            | LR            |
 | Class 04 | Mon Sep 18 | Positive Definite Functions, Feature Maps and Mercer Theorem | LR            |
 | Class 05 | Wed Sep 20 | Tikhonov Regularization and the Representer Theorem          | LR            |
@@ -290,7 +290,6 @@ supervised learning.
 - Nature Insights, [[http://www.nature.com/nature/supplements/insights/machine-intelligence/index.html][Machine Intelligence]] (with review article on Deep
   Learning), Nature, Vol. 521 No. 7553, pp. 435-482, 2015.
 
-
 * Day 3 [Sat Jul  7 13:12:57 CDT 2018]
 
 1. Class 1 video [14.51]
@@ -299,3 +298,80 @@ supervised learning.
 * Day 4 [Sun Jul  8 12:59:19 CDT 2018]
 
 1. Class 1 Done
+
+* Day 5 [Mon Jul  9 16:12:01 CDT 2018]
+
+** Math camp
+
+Math camp extra class, optional for those interested: Tue. 09/12, 4:00
+pm - 5:30 pm, Singleton auditorium (46-3002).
+
+*** Description
+
+We review the basic prerequisites for the course on functional
+analysis, linear algebra, probability theory and concentration of
+measure.
+
+*** Class Reference Material
+
+**** Youtube video
+
+[[yt:AsogCoscZgE]]
+
+[[https://youtu.be/AsogCoscZgE][Link here]]
+
+**** Local video
+
+[[file:../videos/MathCampFor9_520_6_860S-StatisticalLearningTheoryAndApplications.mp4][Video]] file.
+
+**** Slides
+
+Slides: [[file:../docs/mathcamp-slides.pdf][PDF]]. [[http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-slides.pdf][Original URL]].
+Notes/Book appendix: [[file:../docs/mathcamp-fa-notes_book.pdf][PDF]]. [[http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-fa-notes_book.pdf][Original URL]].
+
+* Day 6 (Pending)
+
+** 9.520/6.860, Class 02
+
+*** Description
+
+We formalize the problem of learning from examples in the framework of
+statistical learning theory and introduce key terms and concepts such
+as loss functions, empirical and excess risk, generalization error and
+consistency. We briefly describe foundational results and introduce
+the concepts of hypothesis space and regularization.
+
+*** Class Reference Material
+
+*L. Rosasco, T. Poggio, Machine Learning: a Regularization Approach,
+MIT-9.520 Lectures Notes, Manuscript, Dec. 2017*.
+
+*** Chapter 1 - Statistical Learning Theory
+
+Note: The course notes, in the form of the circulated book draft is
+the reference material for this class. Related and older material can
+be accessed through previous year offerings of the course.
+
+*** Further Reading
+
+- F. Cucker and S. Smale, [[http://www.mit.edu/~9.520/Papers/cuckersmale.pdf][On the mathematical foundations of learning]],
+  Bulletin of the American Mathematical Society, 2002.
+- T. Evgeniou, M. Pontil and T. Poggio, [[http://cbcl.mit.edu/projects/cbcl/publications/ps/evgeniou-reviewall.pdf][Regularization networks and
+  support vector machines]], Advances in Computational
+  Mathematics, 2000.
+- S. Villa, L. Rosasco and T. Poggio, [[http://arxiv.org/pdf/1303.5976v1.pdf][On learnability, complexity and
+  stability]], "Empirical Inference, Festschrift in Honor of Vladimir
+  N. Vapnik." Springer-Verlag, Chapter 7, 2013.
+- V. Vapnik, An overview of statistical learning theory, IEEE
+  Trans. on Neural Networks , 10(5), 1999.
+
+*** Video
+
+[[yt:SFxypsvhhMQ]]
+
+[[https://youtu.be/SFxypsvhhMQ][Link here]]
+
+* References
+
+1. [[file:../docs/MLNotes.pdf][Introductory Machine Learning Notes. Lorenzo Rosasco,
+   MIT, 2017]]. [[http://lcsl.mit.edu/courses/ml/1718/MLNotes.pdf][Original URL]].
