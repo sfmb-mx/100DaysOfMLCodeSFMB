@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2018-07-10 Tue 21:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>100 Days Of Machine Learning Code</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Sergio-Feliciano Mendoza-Barrera" />
+<meta name="description" content="Deep Learning Specialization series course"
+ />
+<meta name="keywords" content="R, data science, emacs, ESS, org-mode, deep learning" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">100 Days Of Machine Learning Code</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org35c371c">1. 100DaysOfMLCodeSFMB</a></li>
+<li><a href="#org2d4f773">2. Day 1 [Thu Jul  5 20:58:13 CDT 2018]</a>
+<ul>
+<li><a href="#org744db68">2.1. Siraj Raval Tweet</a></li>
+<li><a href="#org5bc5be3">2.2. Challenge</a></li>
+<li><a href="#org72c851c">2.3. Following my own path using Julia, R and Python</a></li>
+<li><a href="#org57d2d2c">2.4. Install Julia</a></li>
+<li><a href="#org0fd9fd1">2.5. Install python</a></li>
+<li><a href="#orgb683e9e">2.6. Install Emacs</a></li>
+</ul>
+</li>
+<li><a href="#org92df3e7">3. Day 2 [Fri Jul  6 19:21:03 CDT 2018]</a>
+<ul>
+<li><a href="#orgc995290">3.1. Course description</a></li>
+<li><a href="#orge819364">3.2. Prerequisites</a></li>
+<li><a href="#orge148a80">3.3. Grading</a></li>
+<li><a href="#orgb2bbfe5">3.4. Problem Sets</a></li>
+<li><a href="#org11b314b">3.5. Projects</a></li>
+<li><a href="#orge93050c">3.6. Syllabus</a></li>
+<li><a href="#orge27aec7">3.7. Class 1. Course at a Glance</a></li>
+</ul>
+</li>
+<li><a href="#org163688e">4. Day 3 [Sat Jul  7 13:12:57 CDT 2018]</a></li>
+<li><a href="#org60b181e">5. Day 4 [Sun Jul  8 12:59:19 CDT 2018]</a></li>
+<li><a href="#orgd04d56d">6. Day 5 [Mon Jul  9 16:12:01 CDT 2018]</a>
+<ul>
+<li><a href="#org7b2a36c">6.1. Math camp</a></li>
+</ul>
+</li>
+<li><a href="#orgef6bd3d">7. Day 6 (Pending)</a>
+<ul>
+<li><a href="#org4e7e090">7.1. 9.520/6.860, Class 02</a></li>
+</ul>
+</li>
+<li><a href="#orgf64e6e4">8. References</a></li>
+</ul>
+</div>
+</div>
+<div class="ABSTRACT">
+<p>
+According to the challenge we are going to explore a project and maybe
+the possibility to monetize a solution of an industry problem using
+ML.
+</p>
+
+<p>
+<a href="https://twitter.com/sirajraval/status/1014758160572141568">URL</a>
+</p>
+
+<p>
+"Who’s ready to take the 100 days of ML code challenge? That means
+coding machine learning for at least an hour everyday for the next 100
+days. Pledge with the #100DaysOfMLCode hashtag, I’ll give the first
+few winners a shoutout!"
+</p>
+
+</div>
+
+<div id="outline-container-org35c371c" class="outline-2">
+<h2 id="org35c371c"><span class="section-number-2">1</span> 100DaysOfMLCodeSFMB</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+After read this tweet can be a great way to master something, do not
+know what is, yet.
+</p>
+
+<p>
+In day 2 I decided to explore the MIT course <b>9.520/6.860: Statistical
+Learning Theory and Applications</b> <a href="http://www.mit.edu/~9.520/fall17/">Fall 2017</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d4f773" class="outline-2">
+<h2 id="org2d4f773"><span class="section-number-2">2</span> Day 1 [Thu Jul  5 20:58:13 CDT 2018]</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org744db68" class="outline-3">
+<h3 id="org744db68"><span class="section-number-3">2.1</span> Siraj Raval Tweet</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Who’s ready to take the 100 days of ML code challenge? That means
+coding machine learning for at least an hour everyday for the next 100
+days. Pledge with the #100DaysOfMLCode hashtag, I’ll give the first
+few winners a shoutout!
+</p>
+
+<p>
+<a href="https://twitter.com/sirajraval/status/1014758160572141568">Link to Tweet</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5bc5be3" class="outline-3">
+<h3 id="org5bc5be3"><span class="section-number-3">2.2</span> Challenge</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Pick an industry that sounds exciting, find a problem they have, think
+about how AI could be applied to that problem, locate a relevant
+dataset, apply AI to the dataset, monetize the solution.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org72c851c" class="outline-3">
+<h3 id="org72c851c"><span class="section-number-3">2.3</span> Following my own path using Julia, R and Python</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+In that order, trying to go as far as I can using the first one
+syntax.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org57d2d2c" class="outline-3">
+<h3 id="org57d2d2c"><span class="section-number-3">2.4</span> Install Julia</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-text">   _       _ _(_)_     |  A fresh approach to technical computing
+  (_)     | (_) (_)    |  Documentation: https://docs.julialang.org
+   _ _   _| |_  __ _   |  Type "?help" for help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 0.6.3 (2018-05-28 20:20 UTC)
+ _/ |\__'_|_|_|\__'_|  |  Official http://julialang.org/ release
+|__/                   |  x86_64-pc-linux-gnu
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0fd9fd1" class="outline-3">
+<h3 id="org0fd9fd1"><span class="section-number-3">2.5</span> Install python</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-text">Python version ::
+sys.version_info(major=3, minor=6, micro=5, releaselevel='final', serial=0)
+=================
+OpenCV version ::
+3.4.0
+=================
+Tensorflow version ::
+1.4.1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb683e9e" class="outline-3">
+<h3 id="orgb683e9e"><span class="section-number-3">2.6</span> Install Emacs</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+I am joking, Emacs is always installed ;-).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92df3e7" class="outline-2">
+<h2 id="org92df3e7"><span class="section-number-2">3</span> Day 2 [Fri Jul  6 19:21:03 CDT 2018]</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+9.520/6.860: Statistical Learning Theory and Applications, Fall 2017
+</p>
+
+<p>
+<b>Instructors</b>: <a href="http://cbcl.mit.edu/people/poggio/poggio-new.htm">Tomaso Poggio (TP)</a>, <a href="http://web.mit.edu/lrosasco/www/">Lorenzo Rosasco (LR)</a>, <a href="http://web.mit.edu/gevang/www/">Georgios
+Evangelopoulos (GE)</a>
+</p>
+</div>
+
+<div id="outline-container-orgc995290" class="outline-3">
+<h3 id="orgc995290"><span class="section-number-3">3.1</span> Course description</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+The course covers foundations and recent advances of Machine Learning
+from the point of view of Statistical Learning and Regularization
+Theory.
+</p>
+
+<p>
+Understanding intelligence and how to replicate it in machines is
+arguably one of the greatest problems in science. Learning, its
+principles and computational implementations, is at the very core of
+intelligence. During the last decade, for the first time, we have been
+able to develop artificial intelligence systems that can solve complex
+tasks, until recently the exclusive domain of biological organisms,
+such as computer vision, speech recognition or natural language
+understanding: cameras recognize faces, smart phones understand voice
+commands, smart speakers/assistants answer questions and cars can see
+and avoid obstacles.
+</p>
+
+<p>
+The machine learning algorithms that are at the roots of these success
+stories are trained with labeled examples rather than programmed to
+solve a task. Among the approaches in modern machine learning, the
+course focuses on regularization techniques, that provide a
+theoretical foundation to high-dimensional supervised
+learning. Besides classic approaches such as Support Vector Machines,
+the course covers state of the art techniques using sparsity or data
+geometry (aka manifold learning), a variety of algorithms for
+supervised learning (batch and online), feature selection, structured
+prediction, and multitask learning and principles for designing or
+learning data representations. Concepts from optimization theory
+useful for machine learning are covered in some detail (first order
+methods, proximal/splitting techniques,&#x2026;).
+</p>
+
+<p>
+The final part of the course will focus on deep learning networks. It
+will introduce an emerging theory formalizing three key areas for the
+rigorous characterization of deep learning: approximation theory &#x2013;
+which functions can be represented efficiently?; optimization theory
+&#x2013; how easy is it to minimize the training error?; and generalization
+properties &#x2013; is classical learning theory sufficient for deep
+learning? It will also outline a theory of hierarchical architectures
+that aims to explain how to build machine that learn using cortex
+principles and similar to how children learn: from few labeled and
+many more unlabeled data.
+</p>
+
+<p>
+The goal of the course is to provide students with the theoretical
+knowledge and the basic intuitions needed to use and develop effective
+machine learning solutions to challenging problems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge819364" class="outline-3">
+<h3 id="orge819364"><span class="section-number-3">3.2</span> Prerequisites</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+We will make extensive use of basic notions of calculus, linear
+algebra and probability. The essentials are covered in class and in
+the math camp material. We will introduce a few concepts in
+functional/convex analysis and optimization. Note that this is an
+advanced graduate course and some exposure on introductory Machine
+Learning concepts or courses is expected. Students are also expected
+to have basic familiarity with MATLAB/Octave.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge148a80" class="outline-3">
+<h3 id="orge148a80"><span class="section-number-3">3.3</span> Grading</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Pset and project tentative dates: (<a href="https://docs.google.com/presentation/d/1xt7U25g0AmOrBFxprJyq78qD45g80bH9Y2TbUNokYTE/">slides</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb2bbfe5" class="outline-3">
+<h3 id="orgb2bbfe5"><span class="section-number-3">3.4</span> Problem Sets</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+Problem Set 1
+Problem Set 2
+Problem Set 3
+Problem Set 4
+</p>
+
+<p>
+Submission instructions: Follow the instructions included with the
+problem set. Use the <a href="http://www.mit.edu/~9.520/fall17/slides/9.520_pset_template.zip">latex template</a> for the report (there is a maximum
+page limit). Submit your report online through stellar.mit by the due
+date/time and a printout in the first class after the due date.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org11b314b" class="outline-3">
+<h3 id="org11b314b"><span class="section-number-3">3.5</span> Projects</h3>
+<div class="outline-text-3" id="text-3-5">
+<p>
+Reports are 1-page, extended abstracts using <a href="http://www.mit.edu/~9.520/fall17/slides/9.520_project_report_template.zip">NIPS style files</a>.
+</p>
+</div>
+
+<div id="outline-container-org2b4ea4b" class="outline-4">
+<h4 id="org2b4ea4b"><span class="section-number-4">3.5.1</span> Projects archive</h4>
+<div class="outline-text-4" id="text-3-5-1">
+<p>
+<a href="http://www.mit.edu/~9.520/wikiprojects.html">List of Wikipedia</a> entries, created or edited as part of projects
+during previous course offerings.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge93050c" class="outline-3">
+<h3 id="orge93050c"><span class="section-number-3">3.6</span> Syllabus</h3>
+<div class="outline-text-3" id="text-3-6">
+<p>
+<a href="http://www.mit.edu/~9.520/fall17/#briefsyllabus">URL</a>.
+</p>
+
+<p>
+Follow the link for each class to find a detailed description,
+suggested readings, and class slides. Some of the later classes may be
+subject to reordering or rescheduling.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Class</th>
+<th scope="col" class="org-left">Date</th>
+<th scope="col" class="org-left">Title</th>
+<th scope="col" class="org-left">Instructor(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Class 01</td>
+<td class="org-left">Wed Sep 06</td>
+<td class="org-left"><a href="http://www.mit.edu/~9.520/fall17/Classes/course_glance.html">The Course at a Glance</a></td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 02</td>
+<td class="org-left">Mon Sep 11</td>
+<td class="org-left"><a href="http://www.mit.edu/~9.520/fall17/Classes/learning_problem.html">The Learning Problem and Regularization</a></td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 03</td>
+<td class="org-left">Wed Sep 13</td>
+<td class="org-left">Reproducing Kernel Hilbert Spaces</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 04</td>
+<td class="org-left">Mon Sep 18</td>
+<td class="org-left">Positive Definite Functions, Feature Maps and Mercer Theorem</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 05</td>
+<td class="org-left">Wed Sep 20</td>
+<td class="org-left">Tikhonov Regularization and the Representer Theorem</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 06</td>
+<td class="org-left">Mon Sep 25</td>
+<td class="org-left">Logistic Regression and Support Vector Machines</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 07</td>
+<td class="org-left">Wed Sep 27</td>
+<td class="org-left">Regularized Least Squares</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 08</td>
+<td class="org-left">Mon Oct 02</td>
+<td class="org-left">Iterative Regularization via Early Stopping</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 09</td>
+<td class="org-left">Wed Oct 04</td>
+<td class="org-left">Learning with Stochastic Gradients</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 10</td>
+<td class="org-left">Wed Oct 11</td>
+<td class="org-left">Large Scale Kernel Methods</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 11</td>
+<td class="org-left">Mon Oct 16</td>
+<td class="org-left">Sparsity Based Regularization</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 12</td>
+<td class="org-left">Wed Oct 18</td>
+<td class="org-left">Convex Relaxation and Proximal Gradient</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 13</td>
+<td class="org-left">Mon Oct 23</td>
+<td class="org-left">Structured Sparsity Regularization</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 14</td>
+<td class="org-left">Wed Oct 25</td>
+<td class="org-left">Multiple Kernel Learning</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 15</td>
+<td class="org-left">Mon Oct 30</td>
+<td class="org-left">Learning Theory</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 16</td>
+<td class="org-left">Wed Nov 01</td>
+<td class="org-left">Generalization Error and Stability</td>
+<td class="org-left">LR</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 17</td>
+<td class="org-left">Mon Nov 06</td>
+<td class="org-left">Online Learning II</td>
+<td class="org-left">Sasha Rakhlin</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 18</td>
+<td class="org-left">Wed Nov 08</td>
+<td class="org-left">Online Learning II</td>
+<td class="org-left">Sasha Rakhlin</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 19</td>
+<td class="org-left">Mon Nov 13</td>
+<td class="org-left">Data Representation by Design</td>
+<td class="org-left">GE</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 20</td>
+<td class="org-left">Wed Nov 15</td>
+<td class="org-left">Learning Data Representation: Dictionary Learning</td>
+<td class="org-left">GE</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 21</td>
+<td class="org-left">Mon Nov 20</td>
+<td class="org-left">Learning Data Representation: Neural Networks</td>
+<td class="org-left">GE</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 22</td>
+<td class="org-left">Wed Nov 22</td>
+<td class="org-left">Deep Learning Theory: Approximation</td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 23</td>
+<td class="org-left">Mon Nov 27</td>
+<td class="org-left">Deep Learning Theory: Optimization</td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 24</td>
+<td class="org-left">Wed Nov 29</td>
+<td class="org-left">Deep Learning Theory: Generalization</td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 25</td>
+<td class="org-left">Mon Dec 04</td>
+<td class="org-left">Learning Data Representation: Invariance and Selectivity</td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 26</td>
+<td class="org-left">Wed Dec 06</td>
+<td class="org-left">Deep Networks and Visual Cortex</td>
+<td class="org-left">TP</td>
+</tr>
+
+<tr>
+<td class="org-left">Class 27</td>
+<td class="org-left">Mon Dec 11</td>
+<td class="org-left">Poster presentations (2 sessions)</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orge27aec7" class="outline-3">
+<h3 id="orge27aec7"><span class="section-number-3">3.7</span> Class 1. Course at a Glance</h3>
+<div class="outline-text-3" id="text-3-7">
+</div>
+<div id="outline-container-org101a5ac" class="outline-4">
+<h4 id="org101a5ac"><span class="section-number-4">3.7.1</span> Description</h4>
+<div class="outline-text-4" id="text-3-7-1">
+<p>
+We introduce and motivate the main theme of much of the course,
+setting the problem of supervised learning from examples as the
+ill-posed problem of approximating a multivariate function from sparse
+data. We present an overview of the theoretical part of the course and
+sketch the connection between classical Regularization Theory with its
+RKHS-based algorithms and Learning Theory. We briefly describe several
+different applications ranging from vision to computer graphics, to
+finance and neuroscience. The last third of the course will be on data
+representations for learning and deep learning. It will introduce
+recent theoretical developments towards a) understanding why deep
+learning works and b) a new phase in machine learning, beyond
+classical supervised learning: how to learn in an unsupervised way
+representations that significantly decrease the sample complexity of a
+supervised learning.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc86356" class="outline-4">
+<h4 id="orgdc86356"><span class="section-number-4">3.7.2</span> Slides</h4>
+<div class="outline-text-4" id="text-3-7-2">
+<ul class="org-ul">
+<li>Slides for this lecture: <a href="../docs/class01_2017.pdf">PDF</a>.</li>
+</ul>
+</div>
+
+<div id="outline-container-orge48a665" class="outline-5">
+<h5 id="orge48a665"><span class="section-number-5">3.7.2.1</span> Youtube video class 2015.</h5>
+<div class="outline-text-5" id="text-3-7-2-1">
+<p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/6AWZS4Ho2Z8" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+<a href="https://youtu.be/6AWZS4Ho2Z8">Link here</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8b41ad" class="outline-5">
+<h5 id="orga8b41ad"><span class="section-number-5">3.7.2.2</span> 2017 Course - <a href="https://cbmm.mit.edu">Center for Brains, Minds and Machines</a> (CBMM)</h5>
+<div class="outline-text-5" id="text-3-7-2-2">
+<p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/Q5itLKscYTA" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+<a href="https://youtu.be/Q5itLKscYTA">Link here</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd250fb3" class="outline-4">
+<h4 id="orgd250fb3"><span class="section-number-4">3.7.3</span> Relevant Reading</h4>
+<div class="outline-text-4" id="text-3-7-3">
+<ul class="org-ul">
+<li>Mnih et. al. (Deep Mind), <a href="http://www.nature.com/nature/journal/v518/n7540/full/nature14236.html">Human-level control through deep
+reinforcement learning</a>, Nature 518, pp. 529-533, 2015.</li>
+<li>Nature Insights, <a href="http://www.nature.com/nature/supplements/insights/machine-intelligence/index.html">Machine Intelligence</a> (with review article on Deep
+Learning), Nature, Vol. 521 No. 7553, pp. 435-482, 2015.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org163688e" class="outline-2">
+<h2 id="org163688e"><span class="section-number-2">4</span> Day 3 [Sat Jul  7 13:12:57 CDT 2018]</h2>
+<div class="outline-text-2" id="text-4">
+<ol class="org-ol">
+<li>Class 1 video [14.51]</li>
+<li>Slide [26]</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org60b181e" class="outline-2">
+<h2 id="org60b181e"><span class="section-number-2">5</span> Day 4 [Sun Jul  8 12:59:19 CDT 2018]</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Class 1 Done</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgd04d56d" class="outline-2">
+<h2 id="orgd04d56d"><span class="section-number-2">6</span> Day 5 [Mon Jul  9 16:12:01 CDT 2018]</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org7b2a36c" class="outline-3">
+<h3 id="org7b2a36c"><span class="section-number-3">6.1</span> Math camp</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+Math camp extra class, optional for those interested: Tue. 09/12, 4:00
+pm - 5:30 pm, Singleton auditorium (46-3002).
+</p>
+</div>
+
+<div id="outline-container-org2230b0a" class="outline-4">
+<h4 id="org2230b0a"><span class="section-number-4">6.1.1</span> Description</h4>
+<div class="outline-text-4" id="text-6-1-1">
+<p>
+We review the basic prerequisites for the course on functional
+analysis, linear algebra, probability theory and concentration of
+measure.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge40d4a0" class="outline-4">
+<h4 id="orge40d4a0"><span class="section-number-4">6.1.2</span> Class Reference Material</h4>
+<div class="outline-text-4" id="text-6-1-2">
+</div>
+<div id="outline-container-orgaad9451" class="outline-5">
+<h5 id="orgaad9451"><span class="section-number-5">6.1.2.1</span> Youtube video</h5>
+<div class="outline-text-5" id="text-6-1-2-1">
+<p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/AsogCoscZgE" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+<a href="https://youtu.be/AsogCoscZgE">Link here</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org84eab77" class="outline-5">
+<h5 id="org84eab77"><span class="section-number-5">6.1.2.2</span> Local video</h5>
+<div class="outline-text-5" id="text-6-1-2-2">
+<p>
+<a href="../videos/MathCampFor9_520_6_860S-StatisticalLearningTheoryAndApplications.mp4">Video</a> file.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0302898" class="outline-5">
+<h5 id="org0302898"><span class="section-number-5">6.1.2.3</span> Slides</h5>
+<div class="outline-text-5" id="text-6-1-2-3">
+<p>
+Slides: <a href="../docs/mathcamp-slides.pdf">PDF</a>. <a href="http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-slides.pdf">Original URL</a>.
+Notes/Book appendix: <a href="../docs/mathcamp-fa-notes_book.pdf">PDF</a>. <a href="http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-fa-notes_book.pdf">Original URL</a>.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc37e7b" class="outline-4">
+<h4 id="orgbc37e7b"><span class="section-number-4">6.1.3</span> Some concept testing with data</h4>
+<div class="outline-text-4" id="text-6-1-3">
+<p>
+We like \(\mathbb{R}^D\) because we can
+</p>
+
+<p>
+<b>Addition</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">v = [1, 2, 3];
+w = [4, 5, 6];
+println(v + w)
+</pre>
+</div>
+
+<pre class="example">
+
+
+[5, 7, 9]
+
+</pre>
+
+<p>
+<b>Multiply by numbers</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">println(3 * v)
+</pre>
+</div>
+
+<pre class="example">
+[3, 6, 9]
+
+</pre>
+
+<p>
+<b>Scalar product</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">println(v)
+println(w)
+dot(vec(v), vec(w))
+dot(v, w)
+</pre>
+</div>
+
+<pre class="example">
+[1, 2, 3]
+[4, 5, 6]
+32
+32
+
+</pre>
+
+<p>
+<b>Norm</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">sqrt(dot(vec(v'), vec(v)))
+vecnorm(v)
+norm(v)
+</pre>
+</div>
+
+<pre class="example">
+3.7416573867739413
+3.7416573867739413
+3.7416573867739413
+
+</pre>
+
+<p>
+<b>Distances between vectors</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">vecnorm(v - w)
+norm(v - w)
+</pre>
+</div>
+
+<pre class="example">
+5.196152422706632
+5.196152422706632
+
+</pre>
+
+<p>
+<b>RMS value</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">norm(v) / sqrt(length(v))
+</pre>
+</div>
+
+<pre class="example">
+2.160246899469287
+
+</pre>
+
+<p>
+<b>Standard deviation</b>
+</p>
+
+<p>
+<i>Important note</i>: Julia do not use this definition.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">norm(v - mean(v))/sqrt(length(v))
+</pre>
+</div>
+
+<pre class="example">
+0.8164965809277261
+
+</pre>
+
+<p>
+Julia's way:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">std(v)
+</pre>
+</div>
+
+<pre class="example">
+1.0
+
+</pre>
+
+<p>
+<b>Angle between two vectors</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">acos(dot(v, w)/(norm(v) * norm(w)))
+</pre>
+</div>
+
+<pre class="example">
+0.2257261285527342
+
+</pre>
+
+<p>
+This what we called "Euclidean" structure. We want to do the samething
+with \(D = \infty\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org891eaa5" class="outline-4">
+<h4 id="org891eaa5"><span class="section-number-4">6.1.4</span> Cauchy-Schwarz inequality</h4>
+<div class="outline-text-4" id="text-6-1-4">
+<p>
+\(\langle v, w \rangle \le \langle v, v \rangle^{\frac{1}{2}} \langle w, w \rangle^{\frac{1}{2}}\).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-julia">println(<span style="color: #5f9411; background-color: #eff8e9;">":: v and w inner product ::"</span>)
+dot(v, w)
+println(<span style="color: #5f9411; background-color: #eff8e9;">":: must be less or equal to ::"</span>)
+sqrt(dot(v, v)) * sqrt(dot(w, w))
+</pre>
+</div>
+
+<pre class="example">
+:: v and w inner product ::
+32
+:: must be less or equal to ::
+32.83291031876401
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgef6bd3d" class="outline-2">
+<h2 id="orgef6bd3d"><span class="section-number-2">7</span> Day 6 (Pending)</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org4e7e090" class="outline-3">
+<h3 id="org4e7e090"><span class="section-number-3">7.1</span> 9.520/6.860, Class 02</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+<div id="outline-container-orgfda241b" class="outline-4">
+<h4 id="orgfda241b"><span class="section-number-4">7.1.1</span> Description</h4>
+<div class="outline-text-4" id="text-7-1-1">
+<p>
+We formalize the problem of learning from examples in the framework of
+statistical learning theory and introduce key terms and concepts such
+as loss functions, empirical and excess risk, generalization error and
+consistency. We briefly describe foundational results and introduce
+the concepts of hypothesis space and regularization.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4d1f88a" class="outline-4">
+<h4 id="org4d1f88a"><span class="section-number-4">7.1.2</span> Class Reference Material</h4>
+<div class="outline-text-4" id="text-7-1-2">
+<p>
+<b>L. Rosasco, T. Poggio, Machine Learning: a Regularization Approach,
+MIT-9.520 Lectures Notes, Manuscript, Dec. 2017</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb62dbef" class="outline-4">
+<h4 id="orgb62dbef"><span class="section-number-4">7.1.3</span> Chapter 1 - Statistical Learning Theory</h4>
+<div class="outline-text-4" id="text-7-1-3">
+<p>
+Note: The course notes, in the form of the circulated book draft is
+the reference material for this class. Related and older material can
+be accessed through previous year offerings of the course.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb0d8fd" class="outline-4">
+<h4 id="orgcb0d8fd"><span class="section-number-4">7.1.4</span> Further Reading</h4>
+<div class="outline-text-4" id="text-7-1-4">
+<ul class="org-ul">
+<li>F. Cucker and S. Smale, <a href="http://www.mit.edu/~9.520/Papers/cuckersmale.pdf">On the mathematical foundations of learning</a>,
+Bulletin of the American Mathematical Society, 2002.</li>
+<li>T. Evgeniou, M. Pontil and T. Poggio, <a href="http://cbcl.mit.edu/projects/cbcl/publications/ps/evgeniou-reviewall.pdf">Regularization networks and
+support vector machines</a>, Advances in Computational
+Mathematics, 2000.</li>
+<li>S. Villa, L. Rosasco and T. Poggio, <a href="http://arxiv.org/pdf/1303.5976v1.pdf">On learnability, complexity and
+stability</a>, "Empirical Inference, Festschrift in Honor of Vladimir
+N. Vapnik." Springer-Verlag, Chapter 7, 2013.</li>
+<li>V. Vapnik, An overview of statistical learning theory, IEEE
+Trans. on Neural Networks , 10(5), 1999.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcb3e0bd" class="outline-4">
+<h4 id="orgcb3e0bd"><span class="section-number-4">7.1.5</span> Video</h4>
+<div class="outline-text-4" id="text-7-1-5">
+<p>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/SFxypsvhhMQ" frameborder="0" allowfullscreen></iframe>
+</p>
+
+<p>
+<a href="https://youtu.be/SFxypsvhhMQ">Link here</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf64e6e4" class="outline-2">
+<h2 id="orgf64e6e4"><span class="section-number-2">8</span> References</h2>
+<div class="outline-text-2" id="text-8">
+<ol class="org-ol">
+<li><a href="../docs/MLNotes.pdf">Introductory Machine Learning Notes. Lorenzo Rosasco,
+MIT, 2017</a>. <a href="http://lcsl.mit.edu/courses/ml/1718/MLNotes.pdf">Original URL</a>.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 05/07/2018</p>
+<p class="author">Author: Sergio-Feliciano Mendoza-Barrera</p>
+<p class="date">Created: 2018-07-10 Tue 21:07</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

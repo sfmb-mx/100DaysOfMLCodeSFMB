@@ -18,7 +18,7 @@
 #+STYLE: <link rel="stylesheet" type="text/css" href="dft.css"/>
 
 #+LaTeX_CLASS: IEEEtran
-#+LATEX_CLASS_OPTIONS: [letterpaper, 9pt, onecolumn, twoside, technote, final]
+#+LATEX_CLASS_OPTIONS: [letterpaper, 9pt, onecolumn, twoside, journal, final]
 #+LATEX_HEADER: \usepackage[USenglish]{babel}
 #+LATEX_HEADER: \hyphenation{do-cu-ment}
 #+LATEX_HEADER: \usepackage{minted}
@@ -28,6 +28,7 @@
 #+LATEX_HEADER: \renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
 #+LATEX_HEADER: \usepackage[libertine,bigdelims]{newtxmath}
 #+LATEX_HEADER: \usepackage[cal=boondoxo,bb=boondox,frak=boondox]{mathalfa}
+#+LATEX_HEADER: \usepackage{amssymb}
 #+LATEX_HEADER: \useosf % change normal text to use proportional oldstyle figures
 
 #+LATEX_HEADER: \markboth{100 Days Of Machine Learning Code}%
@@ -328,6 +329,129 @@ measure.
 
 Slides: [[file:../docs/mathcamp-slides.pdf][PDF]]. [[http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-slides.pdf][Original URL]].
 Notes/Book appendix: [[file:../docs/mathcamp-fa-notes_book.pdf][PDF]]. [[http://www.mit.edu/~9.520/fall17/slides/mathcamp/mathcamp-fa-notes_book.pdf][Original URL]].
+
+*** Some concept testing with data
+
+We like $\mathbb{R}^D$ because we can
+
+*Addition*
+
+#+begin_src julia :session :results output :exports all
+  v = [1, 2, 3];
+  w = [4, 5, 6];
+  println(v + w)
+#+end_src
+
+#+RESULTS:
+:
+:
+: [5, 7, 9]
+
+*Multiply by numbers*
+
+#+begin_src julia :session :results output :exports all
+  println(3 * v)
+#+end_src
+
+#+RESULTS:
+: [3, 6, 9]
+
+*Scalar product*
+
+#+begin_src julia :session :results output :exports all
+  println(v)
+  println(w)
+  dot(vec(v), vec(w))
+  dot(v, w)
+#+end_src
+
+#+RESULTS:
+: [1, 2, 3]
+: [4, 5, 6]
+: 32
+: 32
+
+*Norm*
+
+#+begin_src julia :session :results output :exports all
+  sqrt(dot(vec(v'), vec(v)))
+  vecnorm(v)
+  norm(v)
+#+end_src
+
+#+RESULTS:
+: 3.7416573867739413
+: 3.7416573867739413
+: 3.7416573867739413
+
+*Distances between vectors*
+
+#+begin_src julia :session :results output :exports all
+  vecnorm(v - w)
+  norm(v - w)
+#+end_src
+
+#+RESULTS:
+: 5.196152422706632
+: 5.196152422706632
+
+*RMS value*
+
+#+begin_src julia :session :results output :exports all
+  norm(v) / sqrt(length(v))
+#+end_src
+
+#+RESULTS:
+: 2.160246899469287
+
+*Standard deviation*
+
+/Important note/: Julia do not use this definition.
+
+#+begin_src julia :session :results output :exports all
+  norm(v - mean(v))/sqrt(length(v))
+#+end_src
+
+#+RESULTS:
+: 0.8164965809277261
+
+Julia's way:
+
+#+begin_src julia :session :results output :exports all
+  std(v)
+#+end_src
+
+#+RESULTS:
+: 1.0
+
+*Angle between two vectors*
+
+#+begin_src julia :session :results output :exports all
+  acos(dot(v, w)/(norm(v) * norm(w)))
+#+end_src
+
+#+RESULTS:
+: 0.2257261285527342
+
+This what we called "Euclidean" structure. We want to do the samething
+with $D = \infty$
+
+*** Cauchy-Schwarz inequality
+
+$\langle v, w \rangle \le \langle v, v \rangle^{\frac{1}{2}} \langle w, w \rangle^{\frac{1}{2}}$.
+
+#+begin_src julia :session :results output :exports all
+  println(":: v and w inner product ::")
+  dot(v, w)
+  println(":: must be less or equal to ::")
+  sqrt(dot(v, v)) * sqrt(dot(w, w))
+#+end_src
+
+#+RESULTS:
+: :: v and w inner product ::
+: 32
+: :: must be less or equal to ::
+: 32.83291031876401
 
 * Day 6 (Pending)
 
