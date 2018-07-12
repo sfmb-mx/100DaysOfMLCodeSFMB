@@ -300,7 +300,7 @@ supervised learning.
 
 1. Class 1 Done
 
-* Day 5 [Mon Jul  9 16:12:01 CDT 2018]
+* Day 5, 6, 7 [Init Mon Jul  9 16:12:01 CDT 2018]
 
 ** Math camp
 
@@ -436,6 +436,22 @@ Julia's way:
 This what we called "Euclidean" structure. We want to do the samething
 with $D = \infty$
 
+*** Vector Space
+
+#+CAPTION:  Vector Space
+#+NAME:     fig:vectorSpace_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/vectorSpace_mathCamp.png]]
+
+Example: $\mathbb{R}^D$, space of polynomials, space of functions.
+
+*** Inner Product
+
+#+CAPTION:  Inner Product
+#+NAME:     fig:innerProduct_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/innerProduct_mathCamp.png]]
+
 *** Cauchy-Schwarz inequality
 
 $\langle v, w \rangle \le \langle v, v \rangle^{\frac{1}{2}} \langle w, w \rangle^{\frac{1}{2}}$.
@@ -452,6 +468,50 @@ $\langle v, w \rangle \le \langle v, v \rangle^{\frac{1}{2}} \langle w, w \rangl
 : 32
 : :: must be less or equal to ::
 : 32.83291031876401
+
+*** Norm
+
+Can define norm from inner product:
+
+$||v|| = \langle v, v \rangle^{\frac{1}{2}}$
+
+#+CAPTION:  Norm definition
+#+NAME:     fig:norm_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/norm_mathCamp.png]]
+
+*** Metric
+
+#+CAPTION:  Distance
+#+NAME:     fig:distance_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/distance_mathCamp.png]]
+
+*** Basis
+
+#+CAPTION:  Basis
+#+NAME:     fig:basis_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/basis_mathCamp.png]]
+
+*** Hilbert Space, overview
+
+Goal: to understand Hilbert spaces (complete inner product spaces) and
+to make sense of the expression
+
+$$f = \sum_{i = 1}^{\infty} \langle f, \phi_i \rangle \phi_i, \ f \in \mathcal{H}$$
+
+Need to talk about
+
+1. Cauchy sequence
+2. Completeness
+3. Density
+4. Separability
+
+
+*** Break
+
+~0:31~
 
 * Day 6 (Pending)
 
