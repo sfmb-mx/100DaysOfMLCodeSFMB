@@ -508,10 +508,39 @@ Need to talk about
 3. Density
 4. Separability
 
+*** Cauchy sequence
 
-*** Break
+#+CAPTION:  Cauchy Sequence
+#+NAME:     fig:cauchySequence_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/cauchySequence_mathCamp.png]]
 
-~0:31~
+See definition and examples in the video:
+
+[[yt:d_190jhAifI]]
+
+[[https://youtu.be/d_190jhAifI][Link here]]
+
+#+begin_src julia :session :results output :exports all
+  function nonCauchy(n::Int64)
+      for i = 1:n
+          print((1 + ((-1)^i)), ", ")
+      end
+  end
+
+  n = 12;
+  nonCauchy(n)
+#+end_src
+
+#+RESULTS:
+: nonCauchy (generic function with 1 method)
+:
+:
+: 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2,
+
+*** Completeness [Break]
+
+[0:36]
 
 * Day 6 (Pending)
 
