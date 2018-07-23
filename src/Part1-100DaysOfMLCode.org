@@ -538,9 +538,66 @@ See definition and examples in the video:
 :
 : 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2,
 
-*** Completeness [Break]
+*** Completeness
 
-[0:36]
+#+CAPTION:  Completeness
+#+NAME:     fig:completeness_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/completeness_mathCamp.png]]
+
+*** Hilbert Space
+
+#+CAPTION:  Hilbert Space
+#+NAME:     fig:hilbertSpace_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/hilbertSpace_mathCamp.png]]
+
+*** Orthonormal Basis
+
+- A Hilbert space has a countable orthonormal basis if and only if it
+  is separable.
+- Can write:
+
+  $$f = \sum_{i = 1}^{\infty} \langle f, \phi_i \rangle \phi_i, \ for \ all \ f \in \mathcal{H}$$
+
+#+CAPTION:  Orthonormal Basis
+#+NAME:     fig:OrthonormalBasis_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/OrthonormalBasis_mathCamp.png]]
+
+** Functional and Operators (Matrices)
+
+*** Maps
+
+#+CAPTION:  Maps
+#+NAME:     fig:Maps_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/Maps_mathCamp.png]]
+
+*** Representation of Continuous Functionals
+
+#+CAPTION:  Representation of continuous functionals
+#+NAME:     fig:RepresentationOfContinuousFunctionals_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/RepresentationOfContinuousFunctionals_mathCamp.png]]
+
+*** Matrix
+
+#+CAPTION:  Matrix
+#+NAME:     fig:matrix_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/matrix_mathCamp.png]]
+
+- $A$ is symmetric if $A^T = A$
+
+*** Eigenvalues and Eigenvectors
+
+#+CAPTION:  Eigenvalues and Eigenvectors
+#+NAME:     fig:EigenvaluesAndEigenvectors_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/EigenvaluesAndEigenvectors_mathCamp.png]]
+
+[Break] 00:50
 
 * Day 6 (Pending)
 
@@ -588,3 +645,10 @@ be accessed through previous year offerings of the course.
 
 1. [[file:../docs/MLNotes.pdf][Introductory Machine Learning Notes. Lorenzo Rosasco,
    MIT, 2017]]. [[http://lcsl.mit.edu/courses/ml/1718/MLNotes.pdf][Original URL]].
+
+#+begin_src julia :results output :exports all
+  println(":: Update! ::")
+#+end_src
+
+#+RESULTS:
+: :: Update! ::
