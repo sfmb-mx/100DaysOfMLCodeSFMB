@@ -597,7 +597,245 @@ See definition and examples in the video:
 #+ATTR_LATEX: :width 12cm :options angle=0
 [[../graphs/EigenvaluesAndEigenvectors_mathCamp.png]]
 
-[Break] 00:50
+Video introduction to eigenvalues and eigenvectors
+
+[[yt:G4N8vJpf7hM]]
+
+[[https://youtu.be/G4N8vJpf7hM][Link here]]
+
+#+begin_src julia :session :results output :exports all
+  A = [3 2; 3 -2]
+  eig(A)
+#+end_src
+
+#+RESULTS:
+: 2×2 Array{Int64,2}:
+:  3   2
+:  3  -2
+: ([4.0, -3.0], [0.894427 -0.316228; 0.447214 0.948683])
+
+*MIT lecture*
+
+[[yt:DzqE7tj7eIM]]
+
+[[https://youtu.be/DzqE7tj7eIM][Link here]]
+
+#+begin_src julia :session :results output :exports all
+  A = [5 1; 3 3]
+  eig(A)
+#+end_src
+
+#+RESULTS:
+: 2×2 Array{Int64,2}:
+:  5  1
+:  3  3
+: ([6.0, 2.0], [0.707107 -0.316228; 0.707107 0.948683])
+
+#+begin_src julia :session :results output :exports all
+  println(":: Eigenvectors ::")
+  x1 = [1; 1]
+  x2 = [1; -3]
+  println(":: =============== ::")
+
+  println(":: First member A x1 ::")
+  A * x1
+  println(":: Second member lambda1 x1 ::")
+  lambda1 = 6.0
+  lambda1 * x1
+
+  println(":: =============== ::")
+  println(":: First member A x2 ::")
+  A * x2
+
+  println(":: Second member lambda2 x2 ::")
+  lambda2 = 2.0
+  lambda2 * x2
+#+end_src
+
+#+RESULTS:
+#+begin_example
+:: Eigenvectors ::
+2-element Array{Int64,1}:
+ 1
+ 1
+2-element Array{Int64,1}:
+  1
+ -3
+:: =============== ::
+
+:: First member A x1 ::
+2-element Array{Int64,1}:
+ 6
+ 6
+:: Second member lambda1 x1 ::
+6.0
+2-element Array{Float64,1}:
+ 6.0
+ 6.0
+
+:: =============== ::
+:: First member A x2 ::
+2-element Array{Int64,1}:
+  2
+ -6
+
+:: Second member lambda2 x2 ::
+2.0
+2-element Array{Float64,1}:
+  2.0
+ -6.0
+#+end_example
+
+#+begin_src julia :session :results output :exports all
+  A2 = [1 5; 3 3]
+  eig(A2)
+#+end_src
+
+#+RESULTS:
+: 2×2 Array{Int64,2}:
+:  1  5
+:  3  3
+: ([-2.0, 6.0], [-0.857493 -0.707107; 0.514496 -0.707107])
+
+#+begin_src julia :session :results output :exports all
+  println(":: Eigenvectors ::")
+  x1 = [-0.857493; 0.514496]
+  x2 = [-0.707107; -0.707107]
+  println(":: =============== ::")
+
+  println(":: First member A x1 ::")
+  A2 * x1
+  println(":: Second member lambda1 x1 ::")
+  lambda1 = -2.0
+  lambda1 * x1
+  println(":: =============== ::")
+
+  println(":: First member A x2 ::")
+  A2 * x2
+  println(":: Second member lambda2 x2 ::")
+  lambda2 = 6.0
+  lambda2 * x2
+#+end_src
+
+#+RESULTS:
+#+begin_example
+:: Eigenvectors ::
+2-element Array{Float64,1}:
+ -0.857493
+  0.514496
+2-element Array{Float64,1}:
+ -0.707107
+ -0.707107
+:: =============== ::
+
+:: First member A x1 ::
+2-element Array{Float64,1}:
+  1.71499
+ -1.02899
+:: Second member lambda1 x1 ::
+-2.0
+2-element Array{Float64,1}:
+  1.71499
+ -1.02899
+:: =============== ::
+
+:: First member A x2 ::
+2-element Array{Float64,1}:
+ -4.24264
+ -4.24264
+:: Second member lambda2 x2 ::
+6.0
+2-element Array{Float64,1}:
+ -4.24264
+ -4.24264
+#+end_example
+
+The *Eigendecomposition* is very useful in Machine Learning
+algorithms.
+
+*** Singular Value Decomposition
+
+#+CAPTION:  Singular Value Decomposition
+#+NAME:     fig:SingularValueDecomposition_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/SingularValueDecomposition_mathCamp.png]]
+
+*** Matrix Norm
+
+#+CAPTION:  Matrix Norm
+#+NAME:     fig:MatrixNorm_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/MatrixNorm_mathCamp.png]]
+
+*** Positive Definite Matrix
+
+#+CAPTION:  Positive Definite Matrix
+#+NAME:     fig:PositiveDefiniteMatrix_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/PositiveDefiniteMatrix_mathCamp.png]]
+
+[[yt:ojUQk_GNQbQ]]
+
+[[https://youtu.be/ojUQk_GNQbQ][Link here]]
+
+*** Adjoint and Compactness
+
+#+CAPTION:  Adjoint and Compactness
+#+NAME:     fig:AdjointAndCompactness_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/AdjointAndCompactness_mathCamp.png]]
+
+*** Spectral Theorem for Compact Self-Adjoint Operator
+
+#+CAPTION:  Spectral Theorem for Compact Self-Adjoint Operator
+#+NAME:     fig:Theorem4CompactSelf-AdjointOperator_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/Theorem4CompactSelf-AdjointOperator_mathCamp.png]]
+
+** Probability Space
+
+#+CAPTION:  Probability Space
+#+NAME:     fig:ProbabilitySpace_mathCamp.png
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/ProbabilitySpace_mathCamp.png]]
+
+*Typo*: $P(X) = \infty$ must be $P(X) = 1$
+
+*** Real Random Variables
+
+#+CAPTION:  Real Random Variables
+#+NAME:     fig:RealRandomVariables_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/RealRandomVariables_mathCamp.png]]
+
+[[yt:ZvWZKLaZVjo]]
+
+[[https://youtu.be/ZvWZKLaZVjo][Link here]]
+
+*** Convergence of Random Variables
+
+#+CAPTION:  Convergence of Random Variables
+#+NAME:     fig:ConvergenceOfRandomVariables_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/ConvergenceOfRandomVariables_mathCamp.png]]
+
+*** Law of Large Numbers
+
+#+CAPTION:  Law of Large Numbers
+#+NAME:     fig:LawOfLargeNumbers_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/LawOfLargeNumbers_mathCamp.png]]
+
+*** Concentration Inequalities
+
+#+CAPTION:  Concentration Inequalities (ERRONEOUS)
+#+NAME:     fig:ConcentrationInequalities_mathCamp
+#+ATTR_LATEX: :width 12cm :options angle=0
+[[../graphs/ConcentrationInequalities_mathCamp.png]]
+
+**** Chebyshev's Inequality
+
+$$P(|X - \mu| \ge \epsilon) \le \frac{Var(X)}{\epsilon^2}$$
 
 * Day 6 (Pending)
 
@@ -645,6 +883,10 @@ be accessed through previous year offerings of the course.
 
 1. [[file:../docs/MLNotes.pdf][Introductory Machine Learning Notes. Lorenzo Rosasco,
    MIT, 2017]]. [[http://lcsl.mit.edu/courses/ml/1718/MLNotes.pdf][Original URL]].
+
+2. Gilbert Strang MIT [[http://www-math.mit.edu/~gs][web page]].
+
+3. [[https://ocw.mit.edu/resources/res-18-001-calculus-online-textbook-spring-2005/textbook][Multivariate Calculus best book]].
 
 #+begin_src julia :results output :exports all
   println(":: Update! ::")
